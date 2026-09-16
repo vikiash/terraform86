@@ -13,9 +13,16 @@ provider "aws" {
   region = var.aws_region
 }
 
-var.bucket_name))
-    error_message = "Bucket name must be 3-63 chars: lowercase letters, numbers, dots, hyphens."
-  }
+variable "aws_region" {
+  description = "AWS region to create the bucket in"
+  type        = string
+  default     = "ap-south-1"
+}
+
+variable "bucket_name" {
+  description = "Globally unique name for the S3 bucket"
+  type        = string
+  default     = 'my-unique-bucket-name-12345'
 }
 
 variable "environment" {
@@ -45,8 +52,12 @@ variable "force_destroy" {
 variable "tags" {
   description = "Additional tags"
   type        = map(string)
-  default     = {}
+  default     = {
+  Project = "demo"
 }
+
+}
+
 
 # ---------------------------------------------------------------------------
 # S3 bucket
