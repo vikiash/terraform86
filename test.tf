@@ -22,7 +22,7 @@ variable "aws_region" {
 variable "bucket_name" {
   description = "Globally unique name for the S3 bucket"
   type        = string
-  default     = 'my-unique-bucket-name-12345'
+  default     = "my-unique-bucket-name-12345"
 }
 
 variable "environment" {
