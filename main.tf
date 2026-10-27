@@ -31,7 +31,7 @@ module "eks" {
   version = "~> 20.0"
 
   cluster_name    = "my-hcp-tf-cluster"
-  cluster_version = "1.35"
+  cluster_version = "1.31"
 
   vpc_id     = module.vpc.vpc_id
   subnet_ids = module.vpc.private_subnets
